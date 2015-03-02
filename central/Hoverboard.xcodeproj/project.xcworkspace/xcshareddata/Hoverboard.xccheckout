@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>149CB8E9-36D8-4944-9CBA-ABC0178A3F97</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hoverboard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AB1C052D4DB0605D8C0E7C3D98B8DEE0B6217979</key>
+		<string>github.com:hoverboard/hoverboard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>central/Hoverboard.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AB1C052D4DB0605D8C0E7C3D98B8DEE0B6217979</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:hoverboard/hoverboard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AB1C052D4DB0605D8C0E7C3D98B8DEE0B6217979</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AB1C052D4DB0605D8C0E7C3D98B8DEE0B6217979</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hoverboard</string>
+		</dict>
+	</array>
+</dict>
+</plist>

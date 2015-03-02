@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51EE1F661AA410330068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F651AA410330068877A /* AppDelegate.swift */; };
+		51EE1F681AA410330068877A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F671AA410330068877A /* Images.xcassets */; };
+		51EE1F6B1AA410330068877A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F691AA410330068877A /* MainMenu.xib */; };
+		51EE1F771AA410330068877A /* HoverboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F761AA410330068877A /* HoverboardTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		51EE1F711AA410330068877A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EE1F581AA410330068877A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51EE1F5F1AA410330068877A;
+			remoteInfo = Hoverboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		51EE1F601AA410330068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51EE1F641AA410330068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51EE1F651AA410330068877A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51EE1F671AA410330068877A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		51EE1F6A1AA410330068877A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		51EE1F701AA410330068877A /* HoverboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoverboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51EE1F751AA410330068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51EE1F761AA410330068877A /* HoverboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverboardTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51EE1F5D1AA410330068877A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51EE1F6D1AA410330068877A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51EE1F571AA410330068877A = {
+			isa = PBXGroup;
+			children = (
+				51EE1F621AA410330068877A /* Hoverboard */,
+				51EE1F731AA410330068877A /* HoverboardTests */,
+				51EE1F611AA410330068877A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51EE1F611AA410330068877A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51EE1F601AA410330068877A /* Hoverboard.app */,
+				51EE1F701AA410330068877A /* HoverboardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51EE1F621AA410330068877A /* Hoverboard */ = {
+			isa = PBXGroup;
+			children = (
+				51EE1F651AA410330068877A /* AppDelegate.swift */,
+				51EE1F671AA410330068877A /* Images.xcassets */,
+				51EE1F691AA410330068877A /* MainMenu.xib */,
+				51EE1F631AA410330068877A /* Supporting Files */,
+			);
+			path = Hoverboard;
+			sourceTree = "<group>";
+		};
+		51EE1F631AA410330068877A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51EE1F641AA410330068877A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		51EE1F731AA410330068877A /* HoverboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				51EE1F761AA410330068877A /* HoverboardTests.swift */,
+				51EE1F741AA410330068877A /* Supporting Files */,
+			);
+			path = HoverboardTests;
+			sourceTree = "<group>";
+		};
+		51EE1F741AA410330068877A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51EE1F751AA410330068877A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51EE1F5F1AA410330068877A /* Hoverboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51EE1F7A1AA410330068877A /* Build configuration list for PBXNativeTarget "Hoverboard" */;
+			buildPhases = (
+				51EE1F5C1AA410330068877A /* Sources */,
+				51EE1F5D1AA410330068877A /* Frameworks */,
+				51EE1F5E1AA410330068877A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hoverboard;
+			productName = Hoverboard;
+			productReference = 51EE1F601AA410330068877A /* Hoverboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		51EE1F6F1AA410330068877A /* HoverboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51EE1F7D1AA410330068877A /* Build configuration list for PBXNativeTarget "HoverboardTests" */;
+			buildPhases = (
+				51EE1F6C1AA410330068877A /* Sources */,
+				51EE1F6D1AA410330068877A /* Frameworks */,
+				51EE1F6E1AA410330068877A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51EE1F721AA410330068877A /* PBXTargetDependency */,
+			);
+			name = HoverboardTests;
+			productName = HoverboardTests;
+			productReference = 51EE1F701AA410330068877A /* HoverboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51EE1F581AA410330068877A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = viralkitty;
+				TargetAttributes = {
+					51EE1F5F1AA410330068877A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					51EE1F6F1AA410330068877A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 51EE1F5F1AA410330068877A;
+					};
+				};
+			};
+			buildConfigurationList = 51EE1F5B1AA410330068877A /* Build configuration list for PBXProject "Hoverboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 51EE1F571AA410330068877A;
+			productRefGroup = 51EE1F611AA410330068877A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51EE1F5F1AA410330068877A /* Hoverboard */,
+				51EE1F6F1AA410330068877A /* HoverboardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		51EE1F5E1AA410330068877A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51EE1F681AA410330068877A /* Images.xcassets in Resources */,
+				51EE1F6B1AA410330068877A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51EE1F6E1AA410330068877A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51EE1F5C1AA410330068877A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51EE1F661AA410330068877A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51EE1F6C1AA410330068877A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51EE1F771AA410330068877A /* HoverboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51EE1F721AA410330068877A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51EE1F5F1AA410330068877A /* Hoverboard */;
+			targetProxy = 51EE1F711AA410330068877A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		51EE1F691AA410330068877A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51EE1F6A1AA410330068877A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		51EE1F781AA410330068877A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		51EE1F791AA410330068877A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		51EE1F7B1AA410330068877A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Hoverboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		51EE1F7C1AA410330068877A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Hoverboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		51EE1F7E1AA410330068877A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoverboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoverboard.app/Contents/MacOS/Hoverboard";
+			};
+			name = Debug;
+		};
+		51EE1F7F1AA410330068877A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoverboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoverboard.app/Contents/MacOS/Hoverboard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51EE1F5B1AA410330068877A /* Build configuration list for PBXProject "Hoverboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51EE1F781AA410330068877A /* Debug */,
+				51EE1F791AA410330068877A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51EE1F7A1AA410330068877A /* Build configuration list for PBXNativeTarget "Hoverboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51EE1F7B1AA410330068877A /* Debug */,
+				51EE1F7C1AA410330068877A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		51EE1F7D1AA410330068877A /* Build configuration list for PBXNativeTarget "HoverboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51EE1F7E1AA410330068877A /* Debug */,
+				51EE1F7F1AA410330068877A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51EE1F581AA410330068877A /* Project object */;
+}
