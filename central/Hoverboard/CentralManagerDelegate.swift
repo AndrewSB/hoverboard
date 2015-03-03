@@ -13,6 +13,7 @@ class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         switch central.state {
         case CBCentralManagerState.PoweredOn:
             println("Powered On")
+            println("Scanning for peripherals advertising the \(hoverboardServiceUUID.UUIDString) service")
             central.scanForPeripheralsWithServices([hoverboardServiceUUID], options: nil)
         case CBCentralManagerState.PoweredOff:
             println("Powered Off")
@@ -42,5 +43,17 @@ class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         println("Connected to peripheral <\(peripheral.identifier.UUIDString)>")
         println("Attempting to discover services for peripheral <\(peripheral.identifier.UUIDString)>")
         peripheral.discoverServices([hoverboardServiceUUID])
+    }
+    
+    func centralManager(central: CBCentralManager!, didDisconnectPeripheral peripheral: CBPeripheral!, error: NSError!) {
+        if error != nil {
+            println("Could not disconnect from peripheral \(peripheral.identifier.UUIDString)")
+            println(error)
+        }
+        
+        println("Disconnected from peripheral \(peripheral.identifier.UUIDString)")
+        connectedPeripherals.removeValueForKey(peripheral.identifier)
+        println("Scanning for peripherals advertising the \(hoverboardServiceUUID.UUIDString) service")
+        central.scanForPeripheralsWithServices([hoverboardServiceUUID], options: nil)
     }
 }

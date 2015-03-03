@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
+		51A5FF481AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */; };
+		51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HIDTarget.swift */; };
 		51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F371AA40F3E0068877A /* AppDelegate.swift */; };
 		51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F391AA40F3E0068877A /* ViewController.swift */; };
 		51EE1F3D1AA40F3E0068877A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F3B1AA40F3E0068877A /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = ../PeripheralManagerDelegate.swift; sourceTree = "<group>"; };
+		51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointerGestureRecognizerDelegate.swift; path = ../PointerGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
+		51DDCA771AA589AE005B8C2F /* HIDTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDTarget.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F361AA40F3E0068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51EE1F371AA40F3E0068877A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 		51EE1F341AA40F3E0068877A /* Hoverboard */ = {
 			isa = PBXGroup;
 			children = (
+				515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */,
+				51DDCA771AA589AE005B8C2F /* HIDTarget.swift */,
+				51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */,
 				51EE1F371AA40F3E0068877A /* AppDelegate.swift */,
 				51EE1F391AA40F3E0068877A /* ViewController.swift */,
 				51EE1F3B1AA40F3E0068877A /* Main.storyboard */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A5FF481AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift in Sources */,
+				51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */,
 				51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */,
 				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
+				515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +419,7 @@
 				51EE1F531AA40F3E0068877A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		51EE1F541AA40F3E0068877A /* Build configuration list for PBXNativeTarget "HoverboardTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				51EE1F561AA40F3E0068877A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

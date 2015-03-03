@@ -27,7 +27,7 @@ var connectedPeripherals: [NSUUID: CBPeripheral]!
 var screen: NSScreen!
 var maximumHeightAllowed: CGFloat!
 var maximumWidthAllowed: CGFloat!
-var mouseEventNumber: Int64!
+var mouseEventNumber: UInt8!
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

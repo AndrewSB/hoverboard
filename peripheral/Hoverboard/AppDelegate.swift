@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import CoreBluetooth
+
+let hoverboardLocalName = "Hoverboard"
+let hoverboardServiceUUID = CBUUID(string: "C51216A6-5469-48B5-A173-B7B8FCE5AC16")
+let pointerCharacteristicUUID = CBUUID(string: "885DC193-4F99-4B17-9C7A-706763DC35FA")
+let clickCharacteristicUUID = CBUUID(string: "D8A35232-0C63-4775-ACD2-0FE683CF85BE")
+
+var hoverboardService: CBMutableService!
+var pointerCharacteristic: CBMutableCharacteristic!
+var clickCharacteristic: CBMutableCharacteristic!
+var peripheralManager: CBPeripheralManager!
+var peripheralManagerDelegate: PeripheralManagerDelegate!
+var queuedData: [[CBMutableCharacteristic: NSData]]!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        queuedData = [[CBMutableCharacteristic: NSData]]()
+        peripheralManagerDelegate = PeripheralManagerDelegate()
+        peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: nil)
+        hoverboardService = CBMutableService(type: hoverboardServiceUUID, primary: true)
+        pointerCharacteristic = CBMutableCharacteristic(type: pointerCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
+        clickCharacteristic = CBMutableCharacteristic(type: clickCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
+        hoverboardService.characteristics = [pointerCharacteristic, clickCharacteristic]
+        
         return true
     }
 
