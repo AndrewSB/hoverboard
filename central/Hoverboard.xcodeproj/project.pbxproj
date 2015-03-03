@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		515CD3F71AA54429003CF5DF /* CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3F61AA54429003CF5DF /* CentralManagerDelegate.swift */; };
+		515CD3F91AA5478C003CF5DF /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3F81AA5478C003CF5DF /* PeripheralDelegate.swift */; };
 		51EE1F661AA410330068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F651AA410330068877A /* AppDelegate.swift */; };
 		51EE1F681AA410330068877A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F671AA410330068877A /* Images.xcassets */; };
 		51EE1F6B1AA410330068877A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F691AA410330068877A /* MainMenu.xib */; };
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		515CD3F61AA54429003CF5DF /* CentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralManagerDelegate.swift; sourceTree = "<group>"; };
+		515CD3F81AA5478C003CF5DF /* PeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		51EE1F601AA410330068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F641AA410330068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51EE1F651AA410330068877A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				51EE1F651AA410330068877A /* AppDelegate.swift */,
+				515CD3F61AA54429003CF5DF /* CentralManagerDelegate.swift */,
+				515CD3F81AA5478C003CF5DF /* PeripheralDelegate.swift */,
 				51EE1F671AA410330068877A /* Images.xcassets */,
 				51EE1F691AA410330068877A /* MainMenu.xib */,
 				51EE1F631AA410330068877A /* Supporting Files */,
@@ -205,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515CD3F91AA5478C003CF5DF /* PeripheralDelegate.swift in Sources */,
+				515CD3F71AA54429003CF5DF /* CentralManagerDelegate.swift in Sources */,
 				51EE1F661AA410330068877A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +401,7 @@
 				51EE1F7C1AA410330068877A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		51EE1F7D1AA410330068877A /* Build configuration list for PBXNativeTarget "HoverboardTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +410,7 @@
 				51EE1F7F1AA410330068877A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
