@@ -35,23 +35,10 @@ class HIDTarget: NSObject {
     }
     
     func click(recognizer: UITapGestureRecognizer) {
-        var packetString = "1,1"
+        var clickState = recognizer.numberOfTapsRequired
+        var packetString = "1,\(clickState)"
         var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
 
-        peripheralManager.updateValue(packetData, forCharacteristic: clickCharacteristic, onSubscribedCentrals: nil)
-    }
-    
-    func doubleClick(recognizer: UITapGestureRecognizer) {
-        var packetString = "1,2"
-        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        peripheralManager.updateValue(packetData, forCharacteristic: clickCharacteristic, onSubscribedCentrals: nil)
-    }
-    
-    func tripleClick(recognizer: UITapGestureRecognizer) {
-        var packetString = "1,3"
-        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
-        
         peripheralManager.updateValue(packetData, forCharacteristic: clickCharacteristic, onSubscribedCentrals: nil)
     }
 }

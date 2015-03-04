@@ -42,12 +42,12 @@ class ViewController: UIViewController {
         singleClickGestureRecognizer.numberOfTapsRequired = 1
         singleClickGestureRecognizer.delegate = singleClickGestureRecognizerDelegate
         doubleClickGestureRecognizerDelegate = DoubleClickGestureRecognizerDelegate()
-        doubleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("doubleClick:"))
+        doubleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("click:"))
         doubleClickGestureRecognizer.numberOfTouchesRequired = 2
         doubleClickGestureRecognizer.numberOfTapsRequired = 2
         doubleClickGestureRecognizer.delegate = doubleClickGestureRecognizerDelegate
         tripleClickGestureRecognizerDelegate = TripleClickGestureRecognizerDelegate()
-        tripleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("tripleClick:"))
+        tripleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("click:"))
         tripleClickGestureRecognizer.numberOfTouchesRequired = 2
         tripleClickGestureRecognizer.numberOfTapsRequired = 3
         tripleClickGestureRecognizer.delegate = tripleClickGestureRecognizerDelegate
