@@ -31,10 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = ../PeripheralManagerDelegate.swift; sourceTree = "<group>"; };
+		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/PeripheralManagerDelegate.swift; sourceTree = "<absolute>"; };
 		5184E6801AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
-		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointGestureRecognizerDelegate.swift; path = ../PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
+		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		51DDCA771AA589AE005B8C2F /* HIDTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDTarget.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F361AA40F3E0068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
