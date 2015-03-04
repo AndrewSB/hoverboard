@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
-		51A5FF481AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */; };
+		5184E6811AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6801AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift */; };
+		5184E6831AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */; };
+		51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */; };
 		51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HIDTarget.swift */; };
 		51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F371AA40F3E0068877A /* AppDelegate.swift */; };
 		51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F391AA40F3E0068877A /* ViewController.swift */; };
@@ -30,7 +32,9 @@
 
 /* Begin PBXFileReference section */
 		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = ../PeripheralManagerDelegate.swift; sourceTree = "<group>"; };
-		51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointerGestureRecognizerDelegate.swift; path = ../PointerGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
+		5184E6801AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
+		5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
+		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointGestureRecognizerDelegate.swift; path = ../PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		51DDCA771AA589AE005B8C2F /* HIDTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDTarget.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F361AA40F3E0068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,9 +89,11 @@
 			children = (
 				515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */,
 				51DDCA771AA589AE005B8C2F /* HIDTarget.swift */,
-				51A5FF471AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift */,
+				51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */,
 				51EE1F371AA40F3E0068877A /* AppDelegate.swift */,
 				51EE1F391AA40F3E0068877A /* ViewController.swift */,
+				5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */,
+				5184E6801AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift */,
 				51EE1F3B1AA40F3E0068877A /* Main.storyboard */,
 				51EE1F3E1AA40F3E0068877A /* Images.xcassets */,
 				51EE1F401AA40F3E0068877A /* LaunchScreen.xib */,
@@ -221,9 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51A5FF481AA566F7000D6306 /* PointerGestureRecognizerDelegate.swift in Sources */,
+				5184E6831AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift in Sources */,
+				51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */,
 				51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */,
 				51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */,
+				5184E6811AA69669007AF2B0 /* ClickGestureRecognizerDelegate.swift in Sources */,
 				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
 				515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */,
 			);

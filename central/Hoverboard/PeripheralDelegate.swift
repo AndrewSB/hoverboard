@@ -99,17 +99,17 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         case clickCharacteristicUUID:
             var eventType = formatter.numberFromString(dataComponents[0] as String)!.intValue
             var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
-            var upEventType: Int32
-            
-            
-            upEventType = eventType == NX_LMOUSEDOWN ? NX_LMOUSEUP : NX_RMOUSEUP
+            var upEventType = eventType == NX_LMOUSEDOWN ? NX_LMOUSEUP : NX_RMOUSEUP
+
             event = CGEventCreateMouseEvent(nil, CGEventType(eventType), currentLocation, mouseButton).takeRetainedValue()
             
             CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventClickState), clickState)
             CGEventPost(eventTap, event)
             CGEventSetType(event, CGEventType(upEventType))
             CGEventPost(eventTap, event)
+            
             mouseEventNumber?++
+            
             break
         default:
             return
