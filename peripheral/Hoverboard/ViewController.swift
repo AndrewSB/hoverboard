@@ -12,12 +12,14 @@ import CoreBluetooth
 var hidTarget: HIDTarget!
 var pointGestureRecognizer: UIPanGestureRecognizer!
 var pointGestureRecognizerDelegate: PointGestureRecognizerDelegate!
-var clickWhilePointingGestureRecognizer: UITapGestureRecognizer!
-var clickGestureRecognizerDelegate: ClickGestureRecognizerDelegate!
-var clickGestureRecognizer: UITapGestureRecognizer!
+var singleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
+var singleClickGestureRecognizerDelegate: SingleClickGestureRecognizerDelegate!
+var singleClickGestureRecognizer: UITapGestureRecognizer!
 var doubleClickGestureRecognizerDelegate: DoubleClickGestureRecognizerDelegate!
 var doubleClickGestureRecognizer: UITapGestureRecognizer!
 var doubleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
+var tripleClickGestureRecognizer: UITapGestureRecognizer!
+var tripleClickGestureRecognizerDelegate: TripleClickGestureRecognizerDelegate!
 var dragWhilePointingGestureRecognizer: UIPanGestureRecognizer!
 var keyGestureRecognizer: UITapGestureRecognizer!
 var mainView: UIView!
@@ -34,18 +36,21 @@ class ViewController: UIViewController {
         pointGestureRecognizer.minimumNumberOfTouches = 2
         pointGestureRecognizer.maximumNumberOfTouches = 2
         pointGestureRecognizer.delegate = pointGestureRecognizerDelegate
-        clickGestureRecognizerDelegate = ClickGestureRecognizerDelegate()
-        clickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("click:"))
-        clickGestureRecognizer.numberOfTouchesRequired = 2
-        clickGestureRecognizer.numberOfTapsRequired = 1
-        clickGestureRecognizer.delegate = clickGestureRecognizerDelegate
+        singleClickGestureRecognizerDelegate = SingleClickGestureRecognizerDelegate()
+        singleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("click:"))
+        singleClickGestureRecognizer.numberOfTouchesRequired = 2
+        singleClickGestureRecognizer.numberOfTapsRequired = 1
+        singleClickGestureRecognizer.delegate = singleClickGestureRecognizerDelegate
         doubleClickGestureRecognizerDelegate = DoubleClickGestureRecognizerDelegate()
         doubleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("doubleClick:"))
         doubleClickGestureRecognizer.numberOfTouchesRequired = 2
         doubleClickGestureRecognizer.numberOfTapsRequired = 2
         doubleClickGestureRecognizer.delegate = doubleClickGestureRecognizerDelegate
-
-    
+        tripleClickGestureRecognizerDelegate = TripleClickGestureRecognizerDelegate()
+        tripleClickGestureRecognizer = UITapGestureRecognizer(target: hidTarget, action: Selector("tripleClick:"))
+        tripleClickGestureRecognizer.numberOfTouchesRequired = 2
+        tripleClickGestureRecognizer.numberOfTapsRequired = 3
+        tripleClickGestureRecognizer.delegate = tripleClickGestureRecognizerDelegate
         
 //        clickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("click:"))
 //        clickWhilePointingGestureRecognizer.numberOfTouchesRequired = 1
@@ -66,8 +71,10 @@ class ViewController: UIViewController {
 //        dragWhilePointingGestureRecognizer.delegate = self
        
         self.view.addGestureRecognizer(pointGestureRecognizer)
-        self.view.addGestureRecognizer(clickGestureRecognizer)
+        self.view.addGestureRecognizer(singleClickGestureRecognizer)
         self.view.addGestureRecognizer(doubleClickGestureRecognizer)
+        self.view.addGestureRecognizer(tripleClickGestureRecognizer)
+
 //        self.view.addGestureRecognizer(clickWhilePointingGestureRecognizer)
 //        self.view.addGestureRecognizer(keyGestureRecognizer)
 //        self.view.addGestureRecognizer(doubleClickWhilePointingGestureRecognizer)

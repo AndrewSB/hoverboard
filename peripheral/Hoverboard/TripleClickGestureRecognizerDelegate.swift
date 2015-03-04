@@ -1,5 +1,5 @@
 //
-//  DoubleClickGestureRecognizerDelegate.swift
+//  TripleClickGestureRecognizerDelegate.swift
 //  Hoverboard
 //
 //  Created by Zachary Adam Kaplan on 3/3/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoubleClickGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
+class TripleClickGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return false
     }
