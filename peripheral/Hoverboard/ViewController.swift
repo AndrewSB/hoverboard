@@ -20,6 +20,7 @@ var doubleClickGestureRecognizer: UITapGestureRecognizer!
 var doubleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
 var tripleClickGestureRecognizer: UITapGestureRecognizer!
 var tripleClickGestureRecognizerDelegate: TripleClickGestureRecognizerDelegate!
+var dragGestureRecognizer: UIPanGestureRecognizer!
 var dragWhilePointingGestureRecognizer: UIPanGestureRecognizer!
 var keyGestureRecognizer: UITapGestureRecognizer!
 var mainView: UIView!

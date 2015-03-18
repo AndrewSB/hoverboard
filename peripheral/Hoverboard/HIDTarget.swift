@@ -10,6 +10,11 @@ import UIKit
 import CoreGraphics
 
 class HIDTarget: NSObject {
+    let kCGEventLeftMouseDown = 1
+    let kCGEventMouseMoved = 5
+    let kCGEventLeftMouseDragged = 6
+    let kCGEventRightMouseDragged = 7
+
     func point(recognizer: UIPanGestureRecognizer) {
         var translation = recognizer.translationInView(mainView)
         var velocity = recognizer.velocityInView(mainView)
@@ -27,16 +32,40 @@ class HIDTarget: NSObject {
 
         var stringTranslationXWithVelocity = formatter.stringFromNumber(tx)!
         var stringTranslationYWithVelocity = formatter.stringFromNumber(ty)!
-        var packetString = "\(stringTranslationXWithVelocity),\(stringTranslationYWithVelocity)"
+        var packetString = "\(kCGEventMouseMoved),\(stringTranslationXWithVelocity),\(stringTranslationYWithVelocity)"
         var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
 
         recognizer.setTranslation(CGPointMake(0.0, 0.0), inView: mainView)
-        peripheralManager.updateValue(packetData, forCharacteristic: pointerCharacteristic, onSubscribedCentrals: nil)
+        peripheralManager.updateValue(packetData, forCharacteristic: pointCharacteristic, onSubscribedCentrals: nil)
+    }
+
+    func drag(recognizer: UIPanGestureRecognizer) {
+        var translation = recognizer.translationInView(mainView)
+        var velocity = recognizer.velocityInView(mainView)
+        var formatter = NSNumberFormatter()
+
+        formatter.numberStyle = .DecimalStyle
+        formatter.usesGroupingSeparator = false;
+        formatter.maximumFractionDigits = 3
+        formatter.minimumFractionDigits = 1
+
+        var vx = abs(velocity.x) / 500
+        var vy = abs(velocity.y) / 500
+        var tx = translation.x * vx
+        var ty = translation.y * vy
+
+        var stringTranslationXWithVelocity = formatter.stringFromNumber(tx)!
+        var stringTranslationYWithVelocity = formatter.stringFromNumber(ty)!
+        var packetString = "\(kCGEventLeftMouseDragged),\(stringTranslationXWithVelocity),\(stringTranslationYWithVelocity)"
+        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
+
+        recognizer.setTranslation(CGPointMake(0.0, 0.0), inView: mainView)
+        peripheralManager.updateValue(packetData, forCharacteristic: pointCharacteristic, onSubscribedCentrals: nil)
     }
     
     func click(recognizer: UITapGestureRecognizer) {
         var clickState = recognizer.numberOfTapsRequired
-        var packetString = "1,\(clickState)"
+        var packetString = "\(kCGEventLeftMouseDown),\(clickState)"
         var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
 
         peripheralManager.updateValue(packetData, forCharacteristic: clickCharacteristic, onSubscribedCentrals: nil)

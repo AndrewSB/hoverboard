@@ -15,7 +15,7 @@ let pointerCharacteristicUUID = CBUUID(string: "885DC193-4F99-4B17-9C7A-706763DC
 let clickCharacteristicUUID = CBUUID(string: "D8A35232-0C63-4775-ACD2-0FE683CF85BE")
 
 var hoverboardService: CBMutableService!
-var pointerCharacteristic: CBMutableCharacteristic!
+var pointCharacteristic: CBMutableCharacteristic!
 var clickCharacteristic: CBMutableCharacteristic!
 var peripheralManager: CBPeripheralManager!
 var peripheralManagerDelegate: PeripheralManagerDelegate!
@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         peripheralManagerDelegate = PeripheralManagerDelegate()
         peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: nil)
         hoverboardService = CBMutableService(type: hoverboardServiceUUID, primary: true)
-        pointerCharacteristic = CBMutableCharacteristic(type: pointerCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
+        pointCharacteristic = CBMutableCharacteristic(type: pointerCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
         clickCharacteristic = CBMutableCharacteristic(type: clickCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
-        hoverboardService.characteristics = [pointerCharacteristic, clickCharacteristic]
+        hoverboardService.characteristics = [pointCharacteristic, clickCharacteristic]
         
         return true
     }
