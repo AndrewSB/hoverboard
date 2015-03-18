@@ -58,8 +58,8 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         var currentLocation = CGEventGetLocation(CGEventCreate(nil).takeRetainedValue())
         var formatter = NSNumberFormatter()
         var event: CGEventRef!
-        var eventType: CGEventType!
         var mouseButton = CGMouseButton(kCGMouseButtonLeft) // This value is ignored
+        var eventType = formatter.numberFromString(dataComponents[0] as String)!.intValue
         
         switch characteristic.UUID {
         case pointerCharacteristicUUID:
@@ -68,12 +68,12 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             formatter.maximumFractionDigits = 3
             formatter.minimumFractionDigits = 1
             
-            var x = formatter.numberFromString(dataComponents[0] as String) as CGFloat
-            var y = formatter.numberFromString(dataComponents[1] as String) as CGFloat
+            var x = formatter.numberFromString(dataComponents[1] as String) as CGFloat
+            var y = formatter.numberFromString(dataComponents[2] as String) as CGFloat
+
             var updatedLocation = CGPointMake((currentLocation.x + x), (currentLocation.y + y))
             
-            eventType = CGEventType(kCGEventMouseMoved)
-            event = CGEventCreateMouseEvent(nil, eventType, updatedLocation, mouseButton).takeRetainedValue()
+            event = CGEventCreateMouseEvent(nil, CGEventType(eventType), updatedLocation, mouseButton).takeRetainedValue()
             
             if floor(updatedLocation.x) >= maximumWidthAllowed {
                 updatedLocation.x = maximumWidthAllowed!
@@ -97,7 +97,6 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             
             break
         case clickCharacteristicUUID:
-            var eventType = formatter.numberFromString(dataComponents[0] as String)!.intValue
             var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
             var upEventType = eventType == NX_LMOUSEDOWN ? NX_LMOUSEUP : NX_RMOUSEUP
 
