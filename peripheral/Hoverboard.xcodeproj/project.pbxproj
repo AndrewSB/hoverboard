@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510FC82D1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */; };
 		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
 		5184E6811AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6801AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift */; };
 		5184E6831AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickWhilePointingGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/PeripheralManagerDelegate.swift; sourceTree = "<absolute>"; };
 		5184E6801AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		51EE1F341AA40F3E0068877A /* Hoverboard */ = {
 			isa = PBXGroup;
 			children = (
+				510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */,
 				515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */,
 				51DDCA771AA589AE005B8C2F /* HIDTarget.swift */,
 				51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */,
@@ -238,6 +241,7 @@
 				5184E6811AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift in Sources */,
 				5184E6851AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift in Sources */,
 				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
+				510FC82D1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift in Sources */,
 				515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,9 +368,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Hoverboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -375,9 +381,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Hoverboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

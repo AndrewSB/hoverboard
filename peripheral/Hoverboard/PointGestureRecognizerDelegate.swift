@@ -10,12 +10,11 @@ import UIKit
 
 class PointGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        //var classAString = NSStringFromClass(gestureRecognizer.classForCoder)
-        //var classBString = NSStringFromClass(otherGestureRecognizer.classForCoder)
-        var shouldRecognize = false
-        
-        //println("Recognized a \(classBString) during a \(classAString)")
-        
-        return shouldRecognize
+        switch otherGestureRecognizer {
+        case singleClickGestureRecognizer, doubleClickGestureRecognizer, tripleClickGestureRecognizer:
+            return true
+        default:
+            return false
+        }
     }
 }
