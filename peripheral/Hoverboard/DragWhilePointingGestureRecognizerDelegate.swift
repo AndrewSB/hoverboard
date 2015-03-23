@@ -1,5 +1,5 @@
 //
-//  SingleClickWhilePointingGestureRecognizerDelegate.swift
+//  DragWhilePointingGestureRecognizerDelegate.swift
 //  Hoverboard
 //
 //  Created by Zachary Adam Kaplan on 3/21/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClickWhilePointingGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
+class DragWhilePointingGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         switch otherGestureRecognizer {
         case pointGestureRecognizer:
@@ -20,10 +20,10 @@ class ClickWhilePointingGestureRecognizerDelegate: NSObject, UIGestureRecognizer
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         switch pointGestureRecognizer.state {
-        case .Changed, .Possible:
+        case .Began, .Changed:
             return true
-        case .Began, .Cancelled, .Ended, .Failed:
-            return false
+        case .Cancelled, .Ended, .Failed, .Possible:
+            return true
         }
     }
 }

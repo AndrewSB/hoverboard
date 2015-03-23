@@ -11,8 +11,8 @@ import UIKit
 class PointGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         switch otherGestureRecognizer {
-        case singleClickGestureRecognizer, doubleClickGestureRecognizer, tripleClickGestureRecognizer:
-            return true
+        case singleClickWhilePointingGestureRecognizer:
+            return false
         default:
             return false
         }

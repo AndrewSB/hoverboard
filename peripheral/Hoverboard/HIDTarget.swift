@@ -8,66 +8,70 @@
 
 import UIKit
 import CoreGraphics
+import Darwin
 
 class HIDTarget: NSObject {
-    let kCGEventLeftMouseDown = 1
-    let kCGEventMouseMoved = 5
-    let kCGEventLeftMouseDragged = 6
-    let kCGEventRightMouseDragged = 7
-
+    var resetCoordinates = CGPointMake(0.0, 0.0)
+    var dragEventNumber: Int!
+    
     func point(recognizer: UIPanGestureRecognizer) {
         var translation = recognizer.translationInView(mainView)
         var velocity = recognizer.velocityInView(mainView)
-        var formatter = NSNumberFormatter()
+        var velocityX = 1 as CGFloat //abs(velocity.x) / 500
+        var velocityY = 1 as CGFloat //abs(velocity.y) / 500
+        var x = translation.x * velocityX
+        var y = translation.y * velocityY
+        var location = CGPointMake(x, y)
 
-        formatter.numberStyle = .DecimalStyle
-        formatter.usesGroupingSeparator = false;
-        formatter.maximumFractionDigits = 3
-        formatter.minimumFractionDigits = 1
-
-        var vx = abs(velocity.x) / 500
-        var vy = abs(velocity.y) / 500
-        var tx = translation.x * vx
-        var ty = translation.y * vy
-
-        var stringTranslationXWithVelocity = formatter.stringFromNumber(tx)!
-        var stringTranslationYWithVelocity = formatter.stringFromNumber(ty)!
-        var packetString = "\(kCGEventMouseMoved),\(stringTranslationXWithVelocity),\(stringTranslationYWithVelocity)"
-        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
-
-        recognizer.setTranslation(CGPointMake(0.0, 0.0), inView: mainView)
-        peripheralManager.updateValue(packetData, forCharacteristic: pointCharacteristic, onSubscribedCentrals: nil)
+        recognizer.setTranslation(resetCoordinates, inView: mainView)
+        
+        switch recognizer.state {
+        case .Changed:
+            switch dragWhilePointingGestureRecognizer.state {
+            case .Changed:
+                mouse.leftMouseDragged(location)
+                
+                break
+            case .Began, .Ended, .Failed, .Cancelled:
+                break
+            case .Possible:
+                mouse.mouseMoved(location)
+                
+                break
+            }
+        default:
+            break
+        }
     }
 
     func drag(recognizer: UIPanGestureRecognizer) {
-        var translation = recognizer.translationInView(mainView)
-        var velocity = recognizer.velocityInView(mainView)
-        var formatter = NSNumberFormatter()
-
-        formatter.numberStyle = .DecimalStyle
-        formatter.usesGroupingSeparator = false;
-        formatter.maximumFractionDigits = 3
-        formatter.minimumFractionDigits = 1
-
-        var vx = abs(velocity.x) / 500
-        var vy = abs(velocity.y) / 500
-        var tx = translation.x * vx
-        var ty = translation.y * vy
-
-        var stringTranslationXWithVelocity = formatter.stringFromNumber(tx)!
-        var stringTranslationYWithVelocity = formatter.stringFromNumber(ty)!
-        var packetString = "\(kCGEventLeftMouseDragged),\(stringTranslationXWithVelocity),\(stringTranslationYWithVelocity)"
-        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
-
-        recognizer.setTranslation(CGPointMake(0.0, 0.0), inView: mainView)
-        peripheralManager.updateValue(packetData, forCharacteristic: pointCharacteristic, onSubscribedCentrals: nil)
+        switch recognizer.state {
+        case .Began:
+            dragEventNumber = Int(arc4random())
+            mouse.leftMouseDown(dragEventNumber)
+            
+            break
+        case .Ended:
+            mouse.leftMouseUp(dragEventNumber)
+            
+            break
+        default:
+            break
+        }
     }
     
     func click(recognizer: UITapGestureRecognizer) {
-        var clickState = recognizer.numberOfTapsRequired
-        var packetString = "\(kCGEventLeftMouseDown),\(clickState)"
-        var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)
+        switch recognizer.state {
+        case .Ended:
+            var eventType = Mouse.EventTypes.LeftMouseDown
+            var clickState = Mouse.ClickStates(rawValue: recognizer.numberOfTapsRequired)!
 
-        peripheralManager.updateValue(packetData, forCharacteristic: clickCharacteristic, onSubscribedCentrals: nil)
+            mouse.click(eventType, clickState: clickState)
+            
+            break
+        default:
+            break
+        }
+        
     }
 }

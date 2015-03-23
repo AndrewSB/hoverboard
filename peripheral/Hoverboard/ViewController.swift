@@ -15,6 +15,7 @@ var hidTarget: HIDTarget!
 
 var point: Selector!
 var click: Selector!
+var drag: Selector!
 
 var pointGestureRecognizer: UIPanGestureRecognizer!
 var pointGestureRecognizerDelegate: PointGestureRecognizerDelegate!
@@ -44,6 +45,10 @@ var tripleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
 var tripleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGestureRecognizerDelegate!
 var tripleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
+var dragWhilePointingGestureRecognizer: UIPanGestureRecognizer!
+var dragWhilePointingGestureRecognizerDelegate: DragWhilePointingGestureRecognizerDelegate!
+var dragWhilePointingGestureRecognizerHIDTarget: HIDTarget!
+
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +57,7 @@ class ViewController: UIViewController {
         
         point = Selector("point:")
         click = Selector("click:")
+        drag = Selector("drag:")
         
         pointGestureRecognizerDelegate = PointGestureRecognizerDelegate()
         pointGestureRecognizerHIDTarget = HIDTarget()
@@ -102,13 +108,21 @@ class ViewController: UIViewController {
         tripleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 3
         tripleClickWhilePointingGestureRecognizer.delegate = tripleClickWhilePointingGestureRecognizerDelegate
         
+        dragWhilePointingGestureRecognizerDelegate = DragWhilePointingGestureRecognizerDelegate()
+        dragWhilePointingGestureRecognizerHIDTarget = HIDTarget()
+        dragWhilePointingGestureRecognizer = UIPanGestureRecognizer(target: dragWhilePointingGestureRecognizerHIDTarget, action: drag)
+        dragWhilePointingGestureRecognizer.minimumNumberOfTouches = 1
+        dragWhilePointingGestureRecognizer.maximumNumberOfTouches = 1
+        dragWhilePointingGestureRecognizer.delegate = dragWhilePointingGestureRecognizerDelegate
+        
         self.view.addGestureRecognizer(pointGestureRecognizer)
-        self.view.addGestureRecognizer(singleClickGestureRecognizer)
-        self.view.addGestureRecognizer(singleClickWhilePointingGestureRecognizer)
-        self.view.addGestureRecognizer(doubleClickGestureRecognizer)
-        self.view.addGestureRecognizer(doubleClickWhilePointingGestureRecognizer)
-        self.view.addGestureRecognizer(tripleClickGestureRecognizer)
-        self.view.addGestureRecognizer(tripleClickWhilePointingGestureRecognizer)
+//        self.view.addGestureRecognizer(singleClickGestureRecognizer)
+//        self.view.addGestureRecognizer(singleClickWhilePointingGestureRecognizer)
+//        self.view.addGestureRecognizer(doubleClickGestureRecognizer)
+//        self.view.addGestureRecognizer(doubleClickWhilePointingGestureRecognizer)
+//        self.view.addGestureRecognizer(tripleClickGestureRecognizer)
+//        self.view.addGestureRecognizer(tripleClickWhilePointingGestureRecognizer)
+//        self.view.addGestureRecognizer(dragWhilePointingGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,7 +18,7 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
         
         for service in peripheral.services {
             println("Discovered service \(service.UUID.description) for peripheral <\(peripheral.identifier.UUIDString)>")
-            peripheral.discoverCharacteristics([pointerCharacteristicUUID, clickCharacteristicUUID], forService: service as CBService)
+            peripheral.discoverCharacteristics([pointCharacteristicUUID, clickCharacteristicUUID], forService: service as CBService)
         }
     }
     
@@ -55,63 +55,68 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
     func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
         var data = NSMutableString(data: characteristic.value(), encoding: NSUTF8StringEncoding)!
         var dataComponents = data.componentsSeparatedByString(",")
-        var currentLocation = CGEventGetLocation(CGEventCreate(nil).takeRetainedValue())
         var formatter = NSNumberFormatter()
-        var event: CGEventRef!
-        var mouseButton = CGMouseButton(kCGMouseButtonLeft) // This value is ignored
-        var eventType = formatter.numberFromString(dataComponents[0] as String)!.intValue
         
-        switch characteristic.UUID {
-        case pointerCharacteristicUUID:
-            formatter.numberStyle = .DecimalStyle
-            formatter.usesGroupingSeparator = false;
-            formatter.maximumFractionDigits = 3
-            formatter.minimumFractionDigits = 1
-            
-            var x = formatter.numberFromString(dataComponents[1] as String) as CGFloat
-            var y = formatter.numberFromString(dataComponents[2] as String) as CGFloat
+        formatter.numberStyle = .DecimalStyle
+        formatter.usesGroupingSeparator = false;
+        formatter.maximumFractionDigits = 3
+        formatter.minimumFractionDigits = 1
+        
+        var event = CGEventCreate(nil).takeRetainedValue()
+        var currentLocation = CGEventGetLocation(event)
+        var eventType = CGEventType(formatter.numberFromString(dataComponents[0] as String)!.intValue)
 
-            var updatedLocation = CGPointMake((currentLocation.x + x), (currentLocation.y + y))
-            
-            event = CGEventCreateMouseEvent(nil, CGEventType(eventType), updatedLocation, mouseButton).takeRetainedValue()
-            
-            if floor(updatedLocation.x) >= maximumWidthAllowed {
-                updatedLocation.x = maximumWidthAllowed!
-            }
-            
-            if floor(updatedLocation.y) >= maximumHeightAllowed {
-                updatedLocation.y = maximumHeightAllowed!
-            }
-            
-            if floor(updatedLocation.x) <= 0 {
-                updatedLocation.x = 0
-            }
-            
-            
-            if floor(updatedLocation.y) <= 0 {
-                updatedLocation.y = 0
-            }
-            
-            CGEventSetLocation(event, updatedLocation)
-            CGEventPost(eventTap, event)
-            
-            break
-        case clickCharacteristicUUID:
-            var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
-            var upEventType = eventType == NX_LMOUSEDOWN ? NX_LMOUSEUP : NX_RMOUSEUP
+        CGEventSetType(event, eventType)
 
-            event = CGEventCreateMouseEvent(nil, CGEventType(eventType), currentLocation, mouseButton).takeRetainedValue()
+//        switch characteristic.UUID {
+//        case pointCharacteristicUUID:
+            var eventNumber = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
+            var x = formatter.numberFromString(dataComponents[2] as String)! as CGFloat
+            var y = formatter.numberFromString(dataComponents[3] as String)! as CGFloat
+            var threshold = 0.0001 as CGFloat
             
-            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventClickState), clickState)
+//            if abs(x) < threshold {
+//                x = x.isSignMinus ? -threshold : threshold
+//            }
+//            
+//            if abs(y) < threshold {
+//                y = y.isSignMinus ? -threshold : threshold
+//            }
+            
+            var location = CGPointMake(currentLocation.x + x, currentLocation.y + y)
+            
+            if floor(location.x) >= maximumWidthAllowed {
+                location.x = maximumWidthAllowed!
+            }
+            
+            if floor(location.y) >= maximumHeightAllowed {
+                location.y = maximumHeightAllowed!
+            }
+            
+            if floor(location.x) <= 0 {
+                location.x = 0
+            }
+            
+            if floor(location.y) <= 0 {
+                location.y = 0
+            }
+            
+            CGEventSetLocation(event, location)
+            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventNumber), eventNumber)
             CGEventPost(eventTap, event)
-            CGEventSetType(event, CGEventType(upEventType))
-            CGEventPost(eventTap, event)
-            
-            mouseEventNumber?++
-            
-            break
-        default:
-            return
-        }
+//        case clickCharacteristicUUID:
+//            var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
+//            var upEventType = eventType == kCGEventLeftMouseDown ? kCGEventLeftMouseUp : kCGEventRightMouseUp
+//            var eventNumber = Int64(arc4random())
+//            var upEvent = CGEventCreateCopy(event).takeRetainedValue()
+//            
+//            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventClickState), clickState)
+//            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventNumber), eventNumber)
+//            CGEventPost(eventTap, event)
+//            CGEventSetType(upEvent, upEventType)
+//            CGEventPost(eventTap, upEvent)
+//        default:
+//            return
+//        }
     }
 }
