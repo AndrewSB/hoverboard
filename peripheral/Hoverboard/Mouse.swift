@@ -65,7 +65,7 @@ class Mouse: NSObject {
         var didSend = peripheralManager.updateValue(packetData, forCharacteristic: characteristic, onSubscribedCentrals: nil)
         
         if didSend == false {
-            queuedData.append([characteristic: packetData])
+            queuedUpdates.append([characteristic: packetData])
         }
     }
 }
