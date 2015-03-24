@@ -10,9 +10,9 @@ import Cocoa
 import CoreBluetooth
 import CoreGraphics
 
-let hoverboardServiceUUID = CBUUID(string: "C51216A6-5469-48B5-A173-B7B8FCE5AC16")
-let pointerCharacteristicUUID = CBUUID(string: "885DC193-4F99-4B17-9C7A-706763DC35FA")
-let clickCharacteristicUUID = CBUUID(string: "D8A35232-0C63-4775-ACD2-0FE683CF85BE")
+let hoverboardServiceUUID = CBUUID(string: "06A3C2A4-1BC7-407A-B14B-3D629A6A428E")
+let pointCharacteristicUUID = CBUUID(string: "F051A32C-C392-4549-8320-E3467E9AB107")
+let clickCharacteristicUUID = CBUUID(string: "2FCDBC64-4DA2-4D01-AEE7-F040D08CCAA1")
 let eventTap = CGEventTapLocation(kCGHIDEventTap)
 let screenHeightPadding: CGFloat = 0.004
 let screenWidthPadding: CGFloat = 0.004
@@ -27,7 +27,7 @@ var connectedPeripherals: [NSUUID: CBPeripheral]!
 var screen: NSScreen!
 var maximumHeightAllowed: CGFloat!
 var maximumWidthAllowed: CGFloat!
-var mouseEventNumber: UInt8!
+var mouseEventNumber: Int64!
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

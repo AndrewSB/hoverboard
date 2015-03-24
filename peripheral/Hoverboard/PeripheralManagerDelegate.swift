@@ -42,14 +42,23 @@ class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     }
     
     func peripheralManagerIsReadyToUpdateSubscribers(peripheral: CBPeripheralManager!) {
-        for (index, data) in enumerate(queuedData) {
-            for (characteristic, value) in data {
-                var didSend = false
-                
-                while didSend == false {
-                    didSend = peripheralManager.updateValue(value, forCharacteristic: characteristic, onSubscribedCentrals: nil)
-                }
-            }
-        }
+        NSLog("Peripheral manager is ready to update subscribers")
+        
+//        while queuedData.count > 0 {
+//            var update = queuedData.removeAtIndex(0)
+//            
+//            for (characteristic, data) in update {
+//                var str = NSString(data: data, encoding: NSUTF8StringEncoding)
+//                
+//                NSLog("Found \(str) in queued data... Attempting to re-send")
+//
+//                var didSend = peripheral.updateValue(data, forCharacteristic: characteristic, onSubscribedCentrals: nil)
+//            
+//                if didSend == false {
+//                    NSLog("Send \(str) failed. Throwing back into queue")
+//                    //queuedData.insert(update, atIndex: 0)
+//                }
+//            }
+//        }
     }
 }

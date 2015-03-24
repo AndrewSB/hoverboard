@@ -10,9 +10,9 @@ import UIKit
 import CoreBluetooth
 
 let hoverboardLocalName = "Hoverboard"
-let hoverboardServiceUUID = CBUUID(string: "C51216A6-5469-48B5-A173-B7B8FCE5AC16")
-let pointerCharacteristicUUID = CBUUID(string: "885DC193-4F99-4B17-9C7A-706763DC35FA")
-let clickCharacteristicUUID = CBUUID(string: "D8A35232-0C63-4775-ACD2-0FE683CF85BE")
+let hoverboardServiceUUID = CBUUID(string: "06A3C2A4-1BC7-407A-B14B-3D629A6A428E")
+let pointCharacteristicUUID = CBUUID(string: "F051A32C-C392-4549-8320-E3467E9AB107")
+let clickCharacteristicUUID = CBUUID(string: "2FCDBC64-4DA2-4D01-AEE7-F040D08CCAA1")
 
 var hoverboardService: CBMutableService!
 var pointCharacteristic: CBMutableCharacteristic!
@@ -20,6 +20,10 @@ var clickCharacteristic: CBMutableCharacteristic!
 var peripheralManager: CBPeripheralManager!
 var peripheralManagerDelegate: PeripheralManagerDelegate!
 var queuedData: [[CBMutableCharacteristic: NSData]]!
+var eventCount: Int!
+var mouse: Mouse!
+var numberFormatter: NSNumberFormatter!
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,10 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         peripheralManagerDelegate = PeripheralManagerDelegate()
         peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: nil)
         hoverboardService = CBMutableService(type: hoverboardServiceUUID, primary: true)
-        pointCharacteristic = CBMutableCharacteristic(type: pointerCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
+        pointCharacteristic = CBMutableCharacteristic(type: pointCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
         clickCharacteristic = CBMutableCharacteristic(type: clickCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
         hoverboardService.characteristics = [pointCharacteristic, clickCharacteristic]
-        
+        mouse = Mouse()
+        numberFormatter = NSNumberFormatter()
+        eventCount = 0
+                
         return true
     }
 

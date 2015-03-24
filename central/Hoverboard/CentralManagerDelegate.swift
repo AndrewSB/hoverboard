@@ -45,6 +45,10 @@ class CentralManagerDelegate: NSObject, CBCentralManagerDelegate {
         peripheral.discoverServices([hoverboardServiceUUID])
     }
     
+    func centralManager(central: CBCentralManager!, didFailToConnectPeripheral peripheral: CBPeripheral!, error: NSError!) {
+        NSLog("Failed to connect to peripheral")
+    }
+    
     func centralManager(central: CBCentralManager!, didDisconnectPeripheral peripheral: CBPeripheral!, error: NSError!) {
         if error != nil {
             println("Could not disconnect from peripheral \(peripheral.identifier.UUIDString)")
