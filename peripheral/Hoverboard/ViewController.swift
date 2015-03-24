@@ -11,40 +11,30 @@ import CoreBluetooth
 
 var mainView: UIView!
 
-var hidTarget: HIDTarget!
-
 var point: Selector!
 var click: Selector!
 var drag: Selector!
 
 var pointGestureRecognizer: UIPanGestureRecognizer!
 var pointGestureRecognizerDelegate: PointGestureRecognizerDelegate!
-var pointGestureRecognizerHIDTarget: HIDTarget!
 
 var singleClickGestureRecognizer: UITapGestureRecognizer!
-var singleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var singleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
 var singleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGestureRecognizerDelegate!
-var singleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 var doubleClickGestureRecognizer: UITapGestureRecognizer!
-var doubleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var doubleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
 var doubleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGestureRecognizerDelegate!
-var doubleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 var tripleClickGestureRecognizer: UITapGestureRecognizer!
-var tripleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var tripleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
 var tripleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGestureRecognizerDelegate!
-var tripleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 var dragWhilePointingGestureRecognizer: UIPanGestureRecognizer!
 var dragWhilePointingGestureRecognizerDelegate: DragWhilePointingGestureRecognizerDelegate!
-var dragWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
@@ -57,51 +47,43 @@ class ViewController: UIViewController {
         drag = Selector("drag:")
         
         pointGestureRecognizerDelegate = PointGestureRecognizerDelegate()
-        pointGestureRecognizerHIDTarget = HIDTarget()
-        pointGestureRecognizer = UIPanGestureRecognizer(target: pointGestureRecognizerHIDTarget, action: point)
+        pointGestureRecognizer = UIPanGestureRecognizer(target: hid, action: point)
         pointGestureRecognizer.minimumNumberOfTouches = 2
         pointGestureRecognizer.maximumNumberOfTouches = 2
         pointGestureRecognizer.delegate = pointGestureRecognizerDelegate
         
-        singleClickGestureRecognizerHIDTarget = HIDTarget()
-        singleClickGestureRecognizer = UITapGestureRecognizer(target: singleClickGestureRecognizerHIDTarget, action: click)
+        singleClickGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         singleClickGestureRecognizer.numberOfTouchesRequired = 2
         singleClickGestureRecognizer.numberOfTapsRequired = 1
 
         singleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
-        singleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
-        singleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: singleClickWhilePointingGestureRecognizerHIDTarget, action: click)
+        singleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         singleClickWhilePointingGestureRecognizer.numberOfTouchesRequired = 1
         singleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 1
         singleClickWhilePointingGestureRecognizer.delegate = singleClickWhilePointingGestureRecognizerDelegate
 
-        doubleClickGestureRecognizerHIDTarget = HIDTarget()
-        doubleClickGestureRecognizer = UITapGestureRecognizer(target: doubleClickGestureRecognizerHIDTarget, action: click)
+        doubleClickGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         doubleClickGestureRecognizer.numberOfTouchesRequired = 2
         doubleClickGestureRecognizer.numberOfTapsRequired = 2
         
         doubleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
-        doubleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
-        doubleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: doubleClickWhilePointingGestureRecognizerHIDTarget, action: click)
+        doubleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         doubleClickWhilePointingGestureRecognizer.numberOfTouchesRequired = 1
         doubleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 2
         doubleClickWhilePointingGestureRecognizer.delegate = doubleClickWhilePointingGestureRecognizerDelegate
 
-        tripleClickGestureRecognizerHIDTarget = HIDTarget()
-        tripleClickGestureRecognizer = UITapGestureRecognizer(target: tripleClickGestureRecognizerHIDTarget, action: click)
+        tripleClickGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         tripleClickGestureRecognizer.numberOfTouchesRequired = 2
         tripleClickGestureRecognizer.numberOfTapsRequired = 3
         
         tripleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
-        tripleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
-        tripleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: tripleClickWhilePointingGestureRecognizerHIDTarget, action: click)
+        tripleClickWhilePointingGestureRecognizer = UITapGestureRecognizer(target: hid, action: click)
         tripleClickWhilePointingGestureRecognizer.numberOfTouchesRequired = 1
         tripleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 3
         tripleClickWhilePointingGestureRecognizer.delegate = tripleClickWhilePointingGestureRecognizerDelegate
         
         dragWhilePointingGestureRecognizerDelegate = DragWhilePointingGestureRecognizerDelegate()
-        dragWhilePointingGestureRecognizerHIDTarget = HIDTarget()
-        dragWhilePointingGestureRecognizer = UIPanGestureRecognizer(target: dragWhilePointingGestureRecognizerHIDTarget, action: drag)
+        dragWhilePointingGestureRecognizer = UIPanGestureRecognizer(target: hid, action: drag)
         dragWhilePointingGestureRecognizer.minimumNumberOfTouches = 1
         dragWhilePointingGestureRecognizer.maximumNumberOfTouches = 1
         dragWhilePointingGestureRecognizer.delegate = dragWhilePointingGestureRecognizerDelegate

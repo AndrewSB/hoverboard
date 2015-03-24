@@ -10,7 +10,7 @@ import UIKit
 import CoreGraphics
 import Darwin
 
-class HIDTarget: NSObject {
+class HID: NSObject {
     var resetCoordinates = CGPointMake(0.0, 0.0)
     var dragEventNumber: Int!
     

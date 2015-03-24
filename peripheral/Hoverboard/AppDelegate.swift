@@ -20,6 +20,7 @@ var clickCharacteristic: CBMutableCharacteristic!
 var peripheralManager: CBPeripheralManager!
 var peripheralManagerDelegate: PeripheralManagerDelegate!
 var queuedUpdates: [[CBMutableCharacteristic: NSData]]!
+var hid: HID!
 var eventCount: Int!
 var mouse: Mouse!
 var numberFormatter: NSNumberFormatter!
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         clickCharacteristic = CBMutableCharacteristic(type: clickCharacteristicUUID, properties: .Notify, value: nil, permissions: .Readable)
         hoverboardService.characteristics = [pointCharacteristic, clickCharacteristic]
         mouse = Mouse()
+        hid = HID()
         numberFormatter = NSNumberFormatter()
         eventCount = 0
                 

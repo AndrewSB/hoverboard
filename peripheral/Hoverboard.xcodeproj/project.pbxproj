@@ -12,7 +12,7 @@
 		510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC8341ABE6BEE002DE43E /* Mouse.swift */; };
 		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
 		51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */; };
-		51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HIDTarget.swift */; };
+		51DDCA781AA589AE005B8C2F /* HID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HID.swift */; };
 		51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F371AA40F3E0068877A /* AppDelegate.swift */; };
 		51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F391AA40F3E0068877A /* ViewController.swift */; };
 		51EE1F3D1AA40F3E0068877A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F3B1AA40F3E0068877A /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 		510FC8341ABE6BEE002DE43E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/PeripheralManagerDelegate.swift; sourceTree = "<absolute>"; };
 		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
-		51DDCA771AA589AE005B8C2F /* HIDTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDTarget.swift; sourceTree = "<group>"; };
+		51DDCA771AA589AE005B8C2F /* HID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HID.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F361AA40F3E0068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51EE1F371AA40F3E0068877A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/AppDelegate.swift; sourceTree = "<absolute>"; };
@@ -93,7 +93,7 @@
 				510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */,
 				510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */,
 				515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */,
-				51DDCA771AA589AE005B8C2F /* HIDTarget.swift */,
+				51DDCA771AA589AE005B8C2F /* HID.swift */,
 				51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */,
 				51EE1F371AA40F3E0068877A /* AppDelegate.swift */,
 				51EE1F391AA40F3E0068877A /* ViewController.swift */,
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */,
-				51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */,
+				51DDCA781AA589AE005B8C2F /* HID.swift in Sources */,
 				51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */,
 				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
 				510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */,
