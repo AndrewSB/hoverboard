@@ -116,13 +116,13 @@ class ViewController: UIViewController {
         dragWhilePointingGestureRecognizer.delegate = dragWhilePointingGestureRecognizerDelegate
         
         self.view.addGestureRecognizer(pointGestureRecognizer)
-//        self.view.addGestureRecognizer(singleClickGestureRecognizer)
-//        self.view.addGestureRecognizer(singleClickWhilePointingGestureRecognizer)
-//        self.view.addGestureRecognizer(doubleClickGestureRecognizer)
-//        self.view.addGestureRecognizer(doubleClickWhilePointingGestureRecognizer)
-//        self.view.addGestureRecognizer(tripleClickGestureRecognizer)
-//        self.view.addGestureRecognizer(tripleClickWhilePointingGestureRecognizer)
-//        self.view.addGestureRecognizer(dragWhilePointingGestureRecognizer)
+        self.view.addGestureRecognizer(singleClickGestureRecognizer)
+        self.view.addGestureRecognizer(singleClickWhilePointingGestureRecognizer)
+        self.view.addGestureRecognizer(doubleClickGestureRecognizer)
+        self.view.addGestureRecognizer(doubleClickWhilePointingGestureRecognizer)
+        self.view.addGestureRecognizer(tripleClickGestureRecognizer)
+        self.view.addGestureRecognizer(tripleClickWhilePointingGestureRecognizer)
+        self.view.addGestureRecognizer(dragWhilePointingGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {

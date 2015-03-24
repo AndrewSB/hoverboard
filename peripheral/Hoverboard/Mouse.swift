@@ -20,7 +20,7 @@ class Mouse: NSObject {
     }
     
     func mouseMoved(eventLocation: CGPoint!) {
-        update(pointCharacteristic, eventType: EventTypes.MouseMoved, eventLocation: eventLocation, eventNumber: Int(arc4random()), clickState: ClickStates.Null)
+        update(pointCharacteristic, eventType: EventTypes.MouseMoved, eventLocation: eventLocation, eventNumber: 0, clickState: ClickStates.Null)
     }
     
     func leftMouseDown(eventNumber: Int!) {
@@ -32,50 +32,40 @@ class Mouse: NSObject {
     }
     
     func leftMouseDragged(eventLocation: CGPoint!) {
-        update(pointCharacteristic, eventType: EventTypes.LeftMouseDragged, eventLocation: eventLocation, eventNumber: Int(arc4random()), clickState: ClickStates.Null)
+        update(pointCharacteristic, eventType: EventTypes.LeftMouseDragged, eventLocation: eventLocation, eventNumber: 0, clickState: ClickStates.Null)
     }
     
     func click(eventType: EventTypes, clickState: ClickStates) {
-        update(clickCharacteristic, eventType: eventType, eventLocation: CGPointMake(0.0, 0.0), eventNumber: Int(arc4random()), clickState: clickState)
+        update(clickCharacteristic, eventType: eventType, eventLocation: CGPointMake(0.0, 0.0), eventNumber: 0, clickState: clickState)
     }
     
     func update(characteristic: CBMutableCharacteristic, eventType: EventTypes!, eventLocation: CGPoint!, eventNumber: Int!, clickState: ClickStates!) {
-        var formatter: NSNumberFormatter!
         var packetString: NSString!
 
-        formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
-        formatter.usesGroupingSeparator = false;
-        formatter.maximumFractionDigits = 3
-        formatter.minimumFractionDigits = 1
+        numberFormatter.numberStyle = .DecimalStyle
+        numberFormatter.usesGroupingSeparator = false
+        numberFormatter.maximumFractionDigits = 3
+        numberFormatter.minimumFractionDigits = 1
         
-        var stringX = formatter.stringFromNumber(eventLocation.x)!
-        var stringY = formatter.stringFromNumber(eventLocation.y)!
+        var stringX = numberFormatter.stringFromNumber(eventLocation.x)!
+        var stringY = numberFormatter.stringFromNumber(eventLocation.y)!
         
         switch characteristic {
         case pointCharacteristic:
-            
             packetString = "\(eventType.rawValue),\(eventNumber),\(stringX),\(stringY)"
-             var data = packetString.dataUsingEncoding(NSUTF8StringEncoding)!
-            peripheralManager.updateValue(data, forCharacteristic: characteristic, onSubscribedCentrals: nil)
-            
-            return
         case clickCharacteristic:
-            NSLog("Click")
-
             packetString = "\(eventType.rawValue),\(clickState.rawValue)"
-
-            break
         default:
             return
         }
+        
+        NSLog(packetString)
         
         var packetData = packetString.dataUsingEncoding(NSUTF8StringEncoding)!
         var didSend = peripheralManager.updateValue(packetData, forCharacteristic: characteristic, onSubscribedCentrals: nil)
         
         if didSend == false {
-            NSLog("Failed to send \(packetString)")
-            queuedData.append([characteristic as CBMutableCharacteristic: packetData])
+            queuedData.append([characteristic: packetData])
         }
     }
 }

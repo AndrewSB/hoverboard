@@ -17,8 +17,8 @@ class HIDTarget: NSObject {
     func point(recognizer: UIPanGestureRecognizer) {
         var translation = recognizer.translationInView(mainView)
         var velocity = recognizer.velocityInView(mainView)
-        var velocityX = 1 as CGFloat //abs(velocity.x) / 500
-        var velocityY = 1 as CGFloat //abs(velocity.y) / 500
+        var velocityX = abs(velocity.x) / 500
+        var velocityY = abs(velocity.y) / 500
         var x = translation.x * velocityX
         var y = translation.y * velocityY
         var location = CGPointMake(x, y)
@@ -30,14 +30,10 @@ class HIDTarget: NSObject {
             switch dragWhilePointingGestureRecognizer.state {
             case .Changed:
                 mouse.leftMouseDragged(location)
-                
-                break
             case .Began, .Ended, .Failed, .Cancelled:
                 break
             case .Possible:
                 mouse.mouseMoved(location)
-                
-                break
             }
         default:
             break
@@ -49,12 +45,8 @@ class HIDTarget: NSObject {
         case .Began:
             dragEventNumber = Int(arc4random())
             mouse.leftMouseDown(dragEventNumber)
-            
-            break
         case .Ended:
             mouse.leftMouseUp(dragEventNumber)
-            
-            break
         default:
             break
         }
@@ -67,8 +59,6 @@ class HIDTarget: NSObject {
             var clickState = Mouse.ClickStates(rawValue: recognizer.numberOfTapsRequired)!
 
             mouse.click(eventType, clickState: clickState)
-            
-            break
         default:
             break
         }

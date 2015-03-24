@@ -68,8 +68,8 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
 
         CGEventSetType(event, eventType)
 
-//        switch characteristic.UUID {
-//        case pointCharacteristicUUID:
+        switch characteristic.UUID {
+        case pointCharacteristicUUID:
             var eventNumber = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
             var x = formatter.numberFromString(dataComponents[2] as String)! as CGFloat
             var y = formatter.numberFromString(dataComponents[3] as String)! as CGFloat
@@ -104,19 +104,19 @@ class PeripheralDelegate: NSObject, CBPeripheralDelegate {
             CGEventSetLocation(event, location)
             CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventNumber), eventNumber)
             CGEventPost(eventTap, event)
-//        case clickCharacteristicUUID:
-//            var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
-//            var upEventType = eventType == kCGEventLeftMouseDown ? kCGEventLeftMouseUp : kCGEventRightMouseUp
-//            var eventNumber = Int64(arc4random())
-//            var upEvent = CGEventCreateCopy(event).takeRetainedValue()
-//            
-//            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventClickState), clickState)
-//            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventNumber), eventNumber)
-//            CGEventPost(eventTap, event)
-//            CGEventSetType(upEvent, upEventType)
-//            CGEventPost(eventTap, upEvent)
-//        default:
-//            return
-//        }
+        case clickCharacteristicUUID:
+            var clickState = formatter.numberFromString(dataComponents[1] as String)!.longLongValue
+            var upEventType = eventType == kCGEventLeftMouseDown ? kCGEventLeftMouseUp : kCGEventRightMouseUp
+            var eventNumber = Int64(arc4random())
+            var upEvent = CGEventCreateCopy(event).takeRetainedValue()
+            
+            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventClickState), clickState)
+            CGEventSetIntegerValueField(event, CGEventField(kCGMouseEventNumber), eventNumber)
+            CGEventPost(eventTap, event)
+            CGEventSetType(upEvent, upEventType)
+            CGEventPost(eventTap, upEvent)
+        default:
+            return
+        }
     }
 }
