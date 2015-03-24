@@ -11,9 +11,6 @@
 		510FC8311ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */; };
 		510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC8341ABE6BEE002DE43E /* Mouse.swift */; };
 		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
-		5184E6811AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6801AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift */; };
-		5184E6831AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */; };
-		5184E6851AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E6841AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift */; };
 		51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */; };
 		51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HIDTarget.swift */; };
 		51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F371AA40F3E0068877A /* AppDelegate.swift */; };
@@ -39,9 +36,6 @@
 		510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragWhilePointingGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		510FC8341ABE6BEE002DE43E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/PeripheralManagerDelegate.swift; sourceTree = "<absolute>"; };
-		5184E6801AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
-		5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
-		5184E6841AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripleClickGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		51DDCA771AA589AE005B8C2F /* HIDTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDTarget.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,9 +97,6 @@
 				51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */,
 				51EE1F371AA40F3E0068877A /* AppDelegate.swift */,
 				51EE1F391AA40F3E0068877A /* ViewController.swift */,
-				5184E6841AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift */,
-				5184E6821AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift */,
-				5184E6801AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift */,
 				51EE1F3B1AA40F3E0068877A /* Main.storyboard */,
 				51EE1F3E1AA40F3E0068877A /* Images.xcassets */,
 				51EE1F401AA40F3E0068877A /* LaunchScreen.xib */,
@@ -240,12 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5184E6831AA69A98007AF2B0 /* DoubleClickGestureRecognizerDelegate.swift in Sources */,
 				51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */,
 				51DDCA781AA589AE005B8C2F /* HIDTarget.swift in Sources */,
 				51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */,
-				5184E6811AA69669007AF2B0 /* SingleClickGestureRecognizerDelegate.swift in Sources */,
-				5184E6851AA6A1A1007AF2B0 /* TripleClickGestureRecognizerDelegate.swift in Sources */,
 				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
 				510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */,
 				510FC82D1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift in Sources */,

@@ -22,7 +22,6 @@ var pointGestureRecognizerDelegate: PointGestureRecognizerDelegate!
 var pointGestureRecognizerHIDTarget: HIDTarget!
 
 var singleClickGestureRecognizer: UITapGestureRecognizer!
-var singleClickGestureRecognizerDelegate: SingleClickGestureRecognizerDelegate!
 var singleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var singleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
@@ -30,7 +29,6 @@ var singleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGesture
 var singleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 var doubleClickGestureRecognizer: UITapGestureRecognizer!
-var doubleClickGestureRecognizerDelegate: DoubleClickGestureRecognizerDelegate!
 var doubleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var doubleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
@@ -38,7 +36,6 @@ var doubleClickWhilePointingGestureRecognizerDelegate: ClickWhilePointingGesture
 var doubleClickWhilePointingGestureRecognizerHIDTarget: HIDTarget!
 
 var tripleClickGestureRecognizer: UITapGestureRecognizer!
-var tripleClickGestureRecognizerDelegate: TripleClickGestureRecognizerDelegate!
 var tripleClickGestureRecognizerHIDTarget: HIDTarget!
 
 var tripleClickWhilePointingGestureRecognizer: UITapGestureRecognizer!
@@ -66,12 +63,10 @@ class ViewController: UIViewController {
         pointGestureRecognizer.maximumNumberOfTouches = 2
         pointGestureRecognizer.delegate = pointGestureRecognizerDelegate
         
-        singleClickGestureRecognizerDelegate = SingleClickGestureRecognizerDelegate()
         singleClickGestureRecognizerHIDTarget = HIDTarget()
         singleClickGestureRecognizer = UITapGestureRecognizer(target: singleClickGestureRecognizerHIDTarget, action: click)
         singleClickGestureRecognizer.numberOfTouchesRequired = 2
         singleClickGestureRecognizer.numberOfTapsRequired = 1
-        singleClickGestureRecognizer.delegate = singleClickGestureRecognizerDelegate
 
         singleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
         singleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
@@ -80,12 +75,10 @@ class ViewController: UIViewController {
         singleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 1
         singleClickWhilePointingGestureRecognizer.delegate = singleClickWhilePointingGestureRecognizerDelegate
 
-        doubleClickGestureRecognizerDelegate = DoubleClickGestureRecognizerDelegate()
         doubleClickGestureRecognizerHIDTarget = HIDTarget()
         doubleClickGestureRecognizer = UITapGestureRecognizer(target: doubleClickGestureRecognizerHIDTarget, action: click)
         doubleClickGestureRecognizer.numberOfTouchesRequired = 2
         doubleClickGestureRecognizer.numberOfTapsRequired = 2
-        doubleClickGestureRecognizer.delegate = doubleClickGestureRecognizerDelegate
         
         doubleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
         doubleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
@@ -94,12 +87,10 @@ class ViewController: UIViewController {
         doubleClickWhilePointingGestureRecognizer.numberOfTapsRequired = 2
         doubleClickWhilePointingGestureRecognizer.delegate = doubleClickWhilePointingGestureRecognizerDelegate
 
-        tripleClickGestureRecognizerDelegate = TripleClickGestureRecognizerDelegate()
         tripleClickGestureRecognizerHIDTarget = HIDTarget()
         tripleClickGestureRecognizer = UITapGestureRecognizer(target: tripleClickGestureRecognizerHIDTarget, action: click)
         tripleClickGestureRecognizer.numberOfTouchesRequired = 2
         tripleClickGestureRecognizer.numberOfTapsRequired = 3
-        tripleClickGestureRecognizer.delegate = tripleClickGestureRecognizerDelegate
         
         tripleClickWhilePointingGestureRecognizerDelegate = ClickWhilePointingGestureRecognizerDelegate()
         tripleClickWhilePointingGestureRecognizerHIDTarget = HIDTarget()
