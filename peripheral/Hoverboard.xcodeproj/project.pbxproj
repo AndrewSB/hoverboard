@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463B061B1AC1E95000D45780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B061A1AC1E95000D45780 /* AppDelegate.swift */; };
+		463B061D1AC1E95700D45780 /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B061C1AC1E95700D45780 /* PeripheralManagerDelegate.swift */; };
 		510FC82D1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */; };
 		510FC8311ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */; };
 		510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FC8341ABE6BEE002DE43E /* Mouse.swift */; };
-		515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */; };
 		51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */; };
 		51DDCA781AA589AE005B8C2F /* HID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDCA771AA589AE005B8C2F /* HID.swift */; };
-		51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F371AA40F3E0068877A /* AppDelegate.swift */; };
 		51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE1F391AA40F3E0068877A /* ViewController.swift */; };
 		51EE1F3D1AA40F3E0068877A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F3B1AA40F3E0068877A /* Main.storyboard */; };
 		51EE1F3F1AA40F3E0068877A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EE1F3E1AA40F3E0068877A /* Images.xcassets */; };
@@ -32,15 +32,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		463B061A1AC1E95000D45780 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		463B061C1AC1E95700D45780 /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralManagerDelegate.swift; sourceTree = "<group>"; };
 		510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickWhilePointingGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragWhilePointingGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		510FC8341ABE6BEE002DE43E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
-		515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeripheralManagerDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/PeripheralManagerDelegate.swift; sourceTree = "<absolute>"; };
 		51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointGestureRecognizerDelegate.swift; sourceTree = "<group>"; };
 		51DDCA771AA589AE005B8C2F /* HID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HID.swift; sourceTree = "<group>"; };
 		51EE1F321AA40F3E0068877A /* Hoverboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoverboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE1F361AA40F3E0068877A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51EE1F371AA40F3E0068877A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/razic/hoverboard/hoverboard/peripheral/Hoverboard/AppDelegate.swift; sourceTree = "<absolute>"; };
 		51EE1F391AA40F3E0068877A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51EE1F3C1AA40F3E0068877A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51EE1F3E1AA40F3E0068877A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -92,10 +92,10 @@
 				510FC8341ABE6BEE002DE43E /* Mouse.swift */,
 				510FC8301ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift */,
 				510FC82C1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift */,
-				515CD3FC1AA54D24003CF5DF /* PeripheralManagerDelegate.swift */,
+				463B061C1AC1E95700D45780 /* PeripheralManagerDelegate.swift */,
 				51DDCA771AA589AE005B8C2F /* HID.swift */,
 				51A5FF471AA566F7000D6306 /* PointGestureRecognizerDelegate.swift */,
-				51EE1F371AA40F3E0068877A /* AppDelegate.swift */,
+				463B061A1AC1E95000D45780 /* AppDelegate.swift */,
 				51EE1F391AA40F3E0068877A /* ViewController.swift */,
 				51EE1F3B1AA40F3E0068877A /* Main.storyboard */,
 				51EE1F3E1AA40F3E0068877A /* Images.xcassets */,
@@ -179,7 +179,7 @@
 				TargetAttributes = {
 					51EE1F311AA40F3E0068877A = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 2JV48DQK6S;
+						DevelopmentTeam = 2Z475Y2H59;
 					};
 					51EE1F461AA40F3E0068877A = {
 						CreatedOnToolsVersion = 6.1;
@@ -234,11 +234,11 @@
 				51A5FF481AA566F7000D6306 /* PointGestureRecognizerDelegate.swift in Sources */,
 				51DDCA781AA589AE005B8C2F /* HID.swift in Sources */,
 				51EE1F3A1AA40F3E0068877A /* ViewController.swift in Sources */,
-				51EE1F381AA40F3E0068877A /* AppDelegate.swift in Sources */,
+				463B061B1AC1E95000D45780 /* AppDelegate.swift in Sources */,
+				463B061D1AC1E95700D45780 /* PeripheralManagerDelegate.swift in Sources */,
 				510FC8351ABE6BEE002DE43E /* Mouse.swift in Sources */,
 				510FC82D1ABE043F002DE43E /* ClickWhilePointingGestureRecognizerDelegate.swift in Sources */,
 				510FC8311ABE6587002DE43E /* DragWhilePointingGestureRecognizerDelegate.swift in Sources */,
-				515CD3FD1AA54D24003CF5DF /* PeripheralManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
