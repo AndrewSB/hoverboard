@@ -17,8 +17,8 @@ class HID: NSObject {
     func point(recognizer: UIPanGestureRecognizer) {
         var translation = recognizer.translationInView(mainView)
         var velocity = recognizer.velocityInView(mainView)
-        var velocityX = abs(velocity.x) / 500
-        var velocityY = abs(velocity.y) / 500
+        var velocityX = abs(velocity.x) / 200
+        var velocityY = abs(velocity.y) / 200
         var x = translation.x * velocityX
         var y = translation.y * velocityY
         var location = CGPointMake(x, y)

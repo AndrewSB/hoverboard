@@ -44,7 +44,7 @@ class Mouse: NSObject {
 
         numberFormatter.numberStyle = .DecimalStyle
         numberFormatter.usesGroupingSeparator = false
-        numberFormatter.maximumFractionDigits = 3
+        numberFormatter.maximumFractionDigits = 2
         numberFormatter.minimumFractionDigits = 1
         
         var stringX = numberFormatter.stringFromNumber(eventLocation.x)!
