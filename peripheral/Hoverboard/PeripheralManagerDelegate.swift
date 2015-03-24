@@ -44,21 +44,17 @@ class PeripheralManagerDelegate: NSObject, CBPeripheralManagerDelegate {
     func peripheralManagerIsReadyToUpdateSubscribers(peripheral: CBPeripheralManager!) {
         NSLog("Peripheral manager is ready to update subscribers")
         
-//        while queuedData.count > 0 {
-//            var update = queuedData.removeAtIndex(0)
-//            
-//            for (characteristic, data) in update {
-//                var str = NSString(data: data, encoding: NSUTF8StringEncoding)
-//                
-//                NSLog("Found \(str) in queued data... Attempting to re-send")
-//
-//                var didSend = peripheral.updateValue(data, forCharacteristic: characteristic, onSubscribedCentrals: nil)
-//            
-//                if didSend == false {
-//                    NSLog("Send \(str) failed. Throwing back into queue")
-//                    //queuedData.insert(update, atIndex: 0)
-//                }
-//            }
-//        }
+        while queuedUpdates.count > 0 {
+            var update = queuedUpdates.removeAtIndex(0)
+
+            for (characteristic, data) in update {
+                var didSend = peripheral.updateValue(data, forCharacteristic: characteristic, onSubscribedCentrals: nil)
+
+                if didSend == false {
+                    NSLog("Did send was false from within readyToUpdateSubscribers callback")
+                    //queuedData.insert(update, atIndex: 0)
+                }
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ var pointCharacteristic: CBMutableCharacteristic!
 var clickCharacteristic: CBMutableCharacteristic!
 var peripheralManager: CBPeripheralManager!
 var peripheralManagerDelegate: PeripheralManagerDelegate!
-var queuedData: [[CBMutableCharacteristic: NSData]]!
+var queuedUpdates: [[CBMutableCharacteristic: NSData]]!
 var eventCount: Int!
 var mouse: Mouse!
 var numberFormatter: NSNumberFormatter!
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        queuedData = [[CBMutableCharacteristic: NSData]]()
+        queuedUpdates = [[CBMutableCharacteristic: NSData]]()
         peripheralManagerDelegate = PeripheralManagerDelegate()
         peripheralManager = CBPeripheralManager(delegate: peripheralManagerDelegate, queue: nil)
         hoverboardService = CBMutableService(type: hoverboardServiceUUID, primary: true)
